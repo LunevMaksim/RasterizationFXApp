@@ -15,13 +15,16 @@ public class RasterizationController {
     @FXML
     private Canvas canvas;
 
+    // Описание интерфейса
     @FXML
     private void initialize() {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
 
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 200, 300, 200, 100, Color.CHOCOLATE);
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 250, 250, 50, 200, Color.AQUA);
+        PixelDrawer pd = new FXPixelDrawer(canvas.getGraphicsContext2D().getPixelWriter());
+
+        Rasterization.drawRectangle(pd, 200, 300, 200, 100, Color.CHOCOLATE);
+        Rasterization.drawRectangle(pd, 250, 250, 50, 200, Color.AQUA);
     }
 
 }
