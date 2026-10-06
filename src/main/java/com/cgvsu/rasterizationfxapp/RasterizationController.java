@@ -23,8 +23,8 @@ public class RasterizationController {
 
         PixelDrawer pd = new FXPixelDrawer(canvas.getGraphicsContext2D().getPixelWriter());
 
-        Rasterization.drawRectangle(pd, 200, 300, 200, 100, Color.CHOCOLATE);
-        Rasterization.drawRectangle(pd, 250, 250, 50, 200, Color.AQUA);
+        Rasterization.drawRectangle(pd, 200, 300, 200, 100, 0xFFD2691E);
+        Rasterization.drawRectangle(pd, 250, 250, 50, 200, 0xFF00FFFF);
     }
 
 }

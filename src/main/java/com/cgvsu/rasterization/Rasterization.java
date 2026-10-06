@@ -11,7 +11,7 @@ public class Rasterization {
             final PixelDrawer pd,
             final int x, final int y,
             final int width, final int height,
-            final Color color)
+            final int color)
     {
         for (int row = y; row < y + height; ++row)
             for (int col = x; col < x + width; ++col)

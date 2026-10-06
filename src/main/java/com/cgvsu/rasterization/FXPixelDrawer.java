@@ -11,7 +11,7 @@ public class FXPixelDrawer implements PixelDrawer{
     }
 
     @Override
-    public void putPixel(int x, int y, Color color) {
-        pw.setColor(x, y, color);
+    public void putPixel(int x, int y, int color) {
+        pw.setArgb(x, y, color);
     }
 }
