@@ -67,4 +67,26 @@ public class Rasterization {
             pd.putPixel(x2, y2, 0xFFFF0000);
         }
     }
+
+    public static void drawLineBrezenham(PixelDrawer pd, int x1, int y1, int x2, int y2, int color){
+        boolean hor = Math.abs(x2 - x1) > Math.abs(y2 - y1);
+        int dx = x2 - x1;
+        int dy = y2 - y1;
+        int stepY = dy >= 0 ? 1 : -1;
+        int stepX = dx >= 0 ? 1 : -1;
+        dy = Math.abs(dy);
+        dx = Math.abs(dx);
+        int x = x1;
+        int y = y1;
+        int d = dx - 2 * dy;
+        for (int i = 0; i <= dx; i++) {
+            pd.putPixel(x, y, color);
+            if (d <= 0){
+                y += stepY;
+                d += 2 * dx;
+            }
+            d += -2 * dy;
+            x += stepX;
+        }
+    }
 }
