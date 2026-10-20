@@ -32,14 +32,14 @@ public class Rasterization {
                 y2 = temp;
             }
 
-            int dx = x2 - x1 + 1;
-            int dy = y2 - y1 + 1;
+            int dx = x2 - x1;
+            int dy = y2 - y1;
 
             double stepY = dy / (double) dx;
             double y = y1;
 
             for (int x = x1; x <= x2; x++) {
-                pd.putPixel(x, (int) y, color);
+                pd.putPixel(x, (int) Math.round(y), color);
                 y += stepY;
             }
         } else {
@@ -59,9 +59,12 @@ public class Rasterization {
             double x = x1;
 
             for (int y = y1; y <= y2 ; y++) {
-                pd.putPixel((int) x, y, color);
+                pd.putPixel((int) Math.round(x), y, color);
                 x += stepX;
             }
+
+            pd.putPixel(x1, y1, 0xFFFF0000);
+            pd.putPixel(x2, y2, 0xFFFF0000);
         }
     }
 }
