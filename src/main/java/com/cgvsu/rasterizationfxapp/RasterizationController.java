@@ -37,8 +37,11 @@ public class RasterizationController {
                 // Rasterization.drawRectangle(pd, 0, 0, 800, 600, 0xFFFFFFFF);
 //                Rasterization.drawLineDDA(pd, 400, 300,
 //                        (int) mouseEvent.getX(), (int) mouseEvent.getY(), 0xFF000000);
-                Rasterization.drawLineBrezenham(pd, 400, 300,
-                       (int) mouseEvent.getX(), (int) mouseEvent.getY(), 0xFF000000);
+//                Rasterization.drawLineBrezenham(pd, 400, 300,
+//                       (int) mouseEvent.getX(), (int) mouseEvent.getY(), 0xFF000000);
+                Rasterization.drawTriangle(pd, 100, 300, 0xFFFF0000,
+                        500, 200, 0xFF00FF00,
+                        (int) mouseEvent.getX(), (int) mouseEvent.getY(), 0xFF0000FF);
             }
         });
     }
